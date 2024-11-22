@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minilib.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 14:40:53 by dolvin17          #+#    #+#             */
-/*   Updated: 2024/11/22 18:27:36 by dolvin17         ###   ########.fr       */
+/*   Created: 2024/11/22 17:56:09 by ghuertas          #+#    #+#             */
+/*   Updated: 2024/11/22 18:25:17 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(const char *str)
 {
-	t_table	table;
+	long	nbr;
+	long	sign;
 
-	if (argc == 6)
-		parse_input(&table, argv);
-	else
-		message_error("argument amount is not correct");
-	printf("%s\n", argv[1]);
+	nbr = 0;
+	sign = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
+		checking(1, "Only positive values\n");
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		nbr = nbr * 10 + (*str - '0');
+		checking(nbr > INT_MAX, "Error\n");
+		checking(nbr < INT_MIN, "Error\n");
+		str++;
+	}
+	return (nbr * sign);
 }

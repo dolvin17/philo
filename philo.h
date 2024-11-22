@@ -6,7 +6,7 @@
 /*   By: dolvin17 <grks_17@hotmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:44:39 by dolvin17          #+#    #+#             */
-/*   Updated: 2024/11/22 18:29:09 by dolvin17         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:21:51 by dolvin17         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	message_error(char *error);
 long		ft_atol(const char *str);
 void	checking(bool if_error, char *error);
 void	parse_input(t_table *table, char **argv);
+size_t	ft_strlen(const char *str);
 
 
 
